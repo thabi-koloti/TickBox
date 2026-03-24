@@ -1,73 +1,64 @@
-# task.
+# task. ✦
 
-A minimal, persistent to-do app that runs entirely in your browser — no installation, no server, no dependencies.
+> *"The secret of getting ahead is getting started."*
 
-![screenshot placeholder](screenshot.png)
+A personal to-do app that lives in a single HTML file. No installation, no server, no account. Just open it and go.
+
+---
+
+## What it does
+
+Every time you open it you get a time-aware greeting, today's date, and a rotating daily quote to kick off your day. Your grocery and recurring tasks are already waiting for you on first launch — ready to check off as you go.
 
 ---
 
 ## Features
 
-- **Create** tasks with a priority level (high / medium / low)
-- **Edit** tasks inline by hovering and clicking the pencil icon
-- **Complete** tasks with a single click — struck through and tracked
-- **Delete** tasks individually or clear all completed at once
-- **Filter** by All, Active, Done, or High priority
-- **Persistent** — tasks are saved to `localStorage` and survive page refreshes
-- Live progress bar and stats (total / done / remaining)
+- **Daily greeting** — Good morning / afternoon / evening based on the time, with today's date
+- **Daily quote** — rotates through 10 motivational quotes, one per day
+- **Pre-loaded groceries** — 5 recurring grocery tasks seeded on first open
+- **Priorities** — tag every task as high, medium, or low
+- **Filters** — view All, Active, Done, or High priority tasks
+- **Inline editing** — hover any task and click ✏ to edit in place
+- **Progress bar** — live tracker of how much you've completed today
+- **Persistent** — everything saves to `localStorage`, survives refreshes and restarts
 
 ---
 
-## Getting Started
+## Getting started
 
-No installation required.
-
-1. Download `todos.html`
-2. Open it in any modern browser
+No install needed. Just download and open.
 
 ```
-open todos.html
+open tickbox.html
 ```
 
-That's it.
+Works in Chrome, Firefox, Safari, and Edge.
 
 ---
 
-## Usage
+## Customising it
 
-**Adding a task**
-Select a priority from the dropdown, type your task, then press `Enter` or click `+ Add`.
+All the personal bits live at the top of the `<script>` tag and are easy to change.
 
-**Editing a task**
-Hover over a task to reveal the edit button (✏). Click it, make your changes, then press `Enter` to save or `Escape` to cancel.
+**Change the quotes** — edit the `QUOTES` array. Each entry takes a `text` and an `author`.
 
-**Completing a task**
-Click the checkbox on the left side of any task to toggle it done/undone.
+**Change the pre-loaded tasks** — edit the `GROCERIES` array. Each entry takes a `text` and a `priority` (`"high"`, `"medium"`, or `"low"`). These only seed once on first open — delete the `tasky_seeded` key in localStorage to re-seed.
 
-**Deleting a task**
-Hover over a task and click the trash icon on the right.
-
-**Filtering**
-Use the `All / Active / Done / High` buttons to filter the list.
+**Change the colour scheme** — edit the CSS variables at the top of the `<style>` tag. The gold accent is `--accent: #e8c547`.
 
 ---
 
-## Data Storage
+## Resetting your data
 
-All tasks are stored in your browser's `localStorage` under the key `tasky_v1`. Data is private to your device and browser — nothing is sent to any server.
-
-To reset all data, open your browser's developer console and run:
+Open the browser console (`F12` → Console) and run:
 
 ```javascript
-localStorage.removeItem('tasky_v1');
+localStorage.clear();
 location.reload();
 ```
 
----
-
-## Browser Support
-
-Works in any modern browser (Chrome, Firefox, Safari, Edge). No polyfills needed.
+This wipes all tasks and re-seeds the grocery defaults on next load.
 
 ---
 
