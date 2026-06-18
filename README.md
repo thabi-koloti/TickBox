@@ -30,7 +30,7 @@ Every time you open it you get a time-aware greeting, today's date, and a rotati
 No install needed. Just download and open.
 
 ```
-open [tickbox.html](http://www.tickbox.com/)
+open (https://tickbo.netlify.app/)
 ```
 
 Works in Chrome, Firefox, Safari, and Edge.
